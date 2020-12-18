@@ -61,7 +61,10 @@ export default function Home() {
 	// pull only attribute properties from parsedQueries
 	const { level: omitLevel, ...attributesQueryState } = parsedQueries
 
-	const [attributes, setAttributes] = useState<Omit<Queries, 'level'>>(attributesQueryState || attributesInitialState)
+	const attributesState =
+		Object.keys(attributesQueryState).length === 0 ? attributesInitialState : attributesQueryState
+
+	const [attributes, setAttributes] = useState<Omit<Queries, 'level'>>(attributesState)
 	type Attribute = keyof typeof attributes
 
 	// adds up current attribute point values, minus default values to get amount of points that have been assigned
