@@ -1,9 +1,50 @@
 {
 	"data": [
-		{ "name": "body" },
-		{ "name": "reflexes" },
-		{ "name": "technical ability" },
-		{ "name": "intelligence" },
-		{ "name": "cool" }
+		{
+			"name": "body",
+			"upgrade": [
+				{ "upgrade_name": "health", "value": 5, "type": "points" },
+				{ "upgrade_name": "stamina", "value": 3, "type": "points" },
+				{ "upgrade_name": "fists & gorilla arms damage", "value": 3, "type": "points" },
+				{ "upgrade_name": "melee weapons damage", "value": 1.5, "type": "%" },
+				{
+					"upgrade_name": "movement penalty while grabbing an enemy and wielding an HMG",
+					"value": -6,
+					"type": "%"
+				},
+				{
+					"upgrade_name": "increase movement while grappling an enemy and enemy grapple duration",
+					"value": 5,
+					"type": "seconds"
+				}
+			]
+		},
+		{
+			"name": "reflexes",
+			"upgrade": [
+				{ "upgrade_name": "passive evasion from enemy attacks", "value": 1, "type": "%" },
+				{ "upgrade_name": "crit chance", "value": 1, "type": "%" },
+				{ "upgrade_name": "damage from mantis blades", "value": 3, "type": "points" }
+			]
+		},
+		{ "name": "technical ability", "upgrade": [{ "upgrade_name": "armor", "value": 5, "type": "%" }] },
+		{
+			"name": "intelligence",
+			"upgrade": [
+				{ "upgrade_name": "cyberdeck ram capacity", "value": 4, "type": "%" },
+				{ "upgrade_name": "quickhack damage", "value": 0.5, "type": "%" },
+				{ "upgrade_name": "quickhack duration", "value": 1, "type": "%" }
+			]
+		},
+		{
+			"name": "cool",
+			"upgrade": [
+				{ "upgrade_name": "crit damage", "value": 2, "type": "%" },
+				{ "upgrade_name": "all resistances", "value": 1, "type": "%" },
+				{ "upgrade_name": "stealth damage", "value": 10, "type": "%" },
+				{ "upgrade_name": "speed at which enemies detect you in stealth", "value": -0.5, "type": "%" },
+				{ "upgrade_name": "monowire damage", "value": 3, "type": "points" }
+			]
+		}
 	]
 }
