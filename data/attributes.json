@@ -1,0 +1,9 @@
+{
+	"data": [
+		{ "name": "body" },
+		{ "name": "reflexes" },
+		{ "name": "technical ability" },
+		{ "name": "intelligence" },
+		{ "name": "cool" }
+	]
+}

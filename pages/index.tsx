@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import attributesData from '../data/attributes.json'
 
 // get query params
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -19,7 +20,7 @@ interface Queries {
 	level: number
 	body: number
 	reflexes: number
-	technicalAbility: number
+	'technical ability': number
 	intelligence: number
 	cool: number
 }
@@ -54,7 +55,7 @@ export default function Home() {
 	const attributesInitialState = {
 		body: defaultState.minAttributePoints,
 		reflexes: defaultState.minAttributePoints,
-		technicalAbility: defaultState.minAttributePoints,
+		'technical ability': defaultState.minAttributePoints,
 		intelligence: defaultState.minAttributePoints,
 		cool: defaultState.minAttributePoints,
 	}
@@ -137,19 +138,19 @@ export default function Home() {
 
 				<h3>Points: {points}</h3>
 				<br />
-				{Object.keys(attributes).map((attribute: Attribute) => (
-					<div key={attribute}>
+				{attributesData.data.map((attribute: { name: Attribute }) => (
+					<div key={attribute.name}>
 						<h3>
-							{attribute}:{' '}
+							{attribute.name}:{' '}
 							<span>
 								<button
-									onClick={() => subtractPoint(attribute)}
-									disabled={attributes[attribute] === defaultState.minAttributePoints}
+									onClick={() => subtractPoint(attribute.name)}
+									disabled={attributes[attribute.name] === defaultState.minAttributePoints}
 								>
 									-
 								</button>
-								{attributes[attribute]}
-								<button onClick={() => addPoint(attribute)} disabled={points === 0}>
+								{attributes[attribute.name]}
+								<button onClick={() => addPoint(attribute.name)} disabled={points === 0}>
 									+
 								</button>
 							</span>
